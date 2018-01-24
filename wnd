@@ -1,4 +1,22 @@
 #!/usr/bin/env node
+const os = require('os')
+const cp = require('child_process')
+
+const mac = os.platform()
+
+const copy = (data) => {
+  if (mac) {
+    const proc = cp.spawn('pbcopy')
+    proc.stdin.write(data)
+    proc.stdin.end()
+  }
+}
+
+const paste = () => {
+  if (mac) {
+    return cp.spawnSync('pbpaste').stdout.toString()
+  }
+}
 
 const wednesday = input => 
   input
@@ -7,4 +25,6 @@ const wednesday = input =>
     .replace(/(.{3})/g, '$1 ')
     .replace(/(\S?(\S)$)/, (_, x, y) => `${x}${y}${y}`.slice(0, 3))
 
-console.log(wednesday(process.argv[2]))
+const output = wednesday(process.argv[2] || paste())
+copy(output)
+console.log(output)

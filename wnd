@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+const wednesday = input => 
+  input
+    .toLowerCase()
+    .replace(/\s/g, '')
+    .replace(/(.{3})/g, '$1 ')
+    .replace(/(\S?(\S)$)/, (_, x, y) => `${x}${y}${y}`.slice(0, 3))
+
+console.log(wednesday(process.argv[2]))

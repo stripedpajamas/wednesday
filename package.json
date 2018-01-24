@@ -1,0 +1,19 @@
+{
+  "name": "wnd",
+  "version": "1.0.0",
+  "author": {
+    "name": "Peter Squicciarini",
+    "url": "https://squi.cc"
+  },
+  "bin": "wnd",
+  "scripts": {
+    "lint": "standard"
+  },
+  "devDependencies": {
+    "standard": "10.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stripedpajamas/wednesday.git"
+  }
+}

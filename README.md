@@ -3,6 +3,8 @@
 it breaks things into groups of threes like wed nes day :)
 pads the last block too.
 
+also: it only works on wednesdays
+
 ### installation/run
 `npm i -g wnd`
 

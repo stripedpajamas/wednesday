@@ -7,7 +7,7 @@
   },
   "bin": "wnd",
   "scripts": {
-    "lint": "standard"
+    "lint": "standard wnd"
   },
   "devDependencies": {
     "standard": "10.0.3"

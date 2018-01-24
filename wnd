@@ -18,13 +18,15 @@ const paste = () => {
   }
 }
 
-const wednesday = input => 
+const wednesday = input =>
   input
     .toLowerCase()
     .replace(/\s/g, '')
     .replace(/(.{3})/g, '$1 ')
     .replace(/(\S?(\S)$)/, (_, x, y) => `${x}${y}${y}`.slice(0, 3))
 
-const output = wednesday(process.argv[2] || paste())
-copy(output)
-console.log(output)
+if ((new Date()).getDay() === 3) {
+  const output = wednesday(process.argv[2] || paste())
+  copy(output)
+  console.log(output)
+}
